@@ -1,0 +1,31 @@
+* {
+    font-feature-settings: "ss01" on;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: 'Apercu';
+    src: url('https://uploads-ssl.webflow.com/61dd865bd089adaaa43f7154/621a20a27a065d03615aa5ea_Heebo-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+003F;
+}
+
+@font-face {
+    font-family: 'Apercu';
+    src: url('https://uploads-ssl.webflow.com/61dd865bd089adaaa43f7154/621a20a271674e93c890befb_Heebo-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+003F;
+}
+@font-face {
+    font-family: 'Apercu';
+    src: url('https://uploads-ssl.webflow.com/61dd865bd089adaaa43f7154/621a20a29296cd0a8d6a19be_Heebo-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+003F;
+}
