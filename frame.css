@@ -7,6 +7,11 @@
   overflow: hidden;
 }
 
+.frame-wrapper, .frame-wrapper * {
+  pointer-events: none;
+  user-select: none;
+}
+
 .frame-bubbles {
   width: 1826em;
   height: 899em;
@@ -125,7 +130,7 @@
   transform: translateX(-2%);
   opacity: 0;
   animation: top-numbers-in 200ms ease-out forwards;
-  animation-delay: 5550ms;
+  animation-delay: 6250ms;
 }
 .frame-app-container .frame-section .frame-top-numbers-container {
   margin-top: 32em;
@@ -138,7 +143,7 @@
   transform: translateX(-2%);
   opacity: 0;
   animation: top-numbers-in 400ms ease-out forwards;
-  animation-delay: 5150ms;
+  animation-delay: 5850ms;
 }
 .frame-app-container .frame-section .frame-top-numbers-container .frame-top-numbers-item {
   padding: 24em;
@@ -232,8 +237,8 @@
   background-color: #fff;
   transform: translateX(0%);
   position: absolute;
-  animation: chart-curtain-out 600ms ease-out forwards;
-  animation-delay: 5750ms;
+  animation: chart-curtain-out 800ms ease-out forwards;
+  animation-delay: 6450ms;
 }
 .frame-app-container .frame-section .frame-main-chart-container .frame-main-chart img {
   width: 100%;
@@ -255,8 +260,8 @@
   top: 420em;
   opacity: 0;
   transform: translateY(20%);
-  animation: slack-container-in 400ms ease-out forwards;
-  animation-delay: 6350ms;
+  animation: slack-container-in 500ms ease-out forwards;
+  animation-delay: 7250ms;
 }
 .frame-slack-container .frame-slack-tooltip-container {
   left: 167em;
@@ -401,14 +406,14 @@
   border-radius: 100%;
   border: 4em solid white;
   opacity: 0;
-  animation: connector-migrate 1500ms ease-out infinite;
-  animation-delay: 3650ms;
+  animation: connector-migrate 5000ms ease-in-out infinite;
+  animation-delay: 3350ms;
 }
 .frame-sources-container .frame-sources-list .frame-sources-connection-path-container {
   width: 100em;
   height: 0em;
   animation: path-connect 1000ms ease-out forwards;
-  animation-delay: 3400ms;
+  animation-delay: 3100ms;
 }
 .frame-sources-container .frame-sources-list .frame-sources-connection-path-container .frame-sources-connection-path {
   width: 20em;
@@ -451,40 +456,40 @@
 }
 .frame-sources-container .frame-sources-item.ks-in2 img:not(:first-child) {
   animation: source-connected 500ms ease-out forwards;
-  animation-delay: 3650ms;
+  animation-delay: 3350ms;
 }
 .frame-sources-container .frame-sources-item.tktk img {
   animation: source-connected-tktk 500ms ease-out forwards;
-  animation-delay: 3650ms;
+  animation-delay: 3350ms;
 }
 .frame-sources-container .frame-sources-item.ks-in {
   opacity: 0;
   animation-fill-mode: forwards;
   animation-name: source-in;
-  animation-duration: 400ms;
+  animation-duration: 350ms;
   animation-timing-function: ease-out;
 }
 .frame-sources-container .frame-sources-item.ks-in img:not(:first-child) {
   animation: source-connected 500ms ease-out forwards;
-  animation-delay: 3400ms;
+  animation-delay: 3100ms;
 }
 .frame-sources-container .frame-sources-item.ks-in.o1 {
   animation-delay: 1000ms;
 }
 .frame-sources-container .frame-sources-item.ks-in.o2 {
-  animation-delay: 1400ms;
+  animation-delay: 1350ms;
 }
 .frame-sources-container .frame-sources-item.ks-in.o3 {
-  animation-delay: 1800ms;
+  animation-delay: 1700ms;
 }
 .frame-sources-container .frame-sources-item.ks-in.o4 {
-  animation-delay: 2200ms;
+  animation-delay: 2050ms;
 }
 .frame-sources-container .frame-sources-item.ks-in.o5 {
-  animation-delay: 2600ms;
+  animation-delay: 2400ms;
 }
 .frame-sources-container .frame-sources-item.ks-in.o6 {
-  animation-delay: 3000ms;
+  animation-delay: 2750ms;
 }
 
 @keyframes source-in {
@@ -519,10 +524,14 @@
 }
 @keyframes connector-migrate {
   0% {
-    opacity: 1;
+    opacity: 0;
     transform: translateY(0);
   }
-  100% {
+  20% {
+    opacity: 0.2;
+  }
+  50%, 100% {
+    opacity: 1;
     transform: translateY(500em);
   }
 }
