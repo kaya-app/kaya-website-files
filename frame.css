@@ -1,9 +1,9 @@
 .frame-wrapper {
-  font-size: 0.7px;
+  font-size: 0.05vw;
   width: 1826em;
-  outline: 1em solid black;
   height: 1254em;
   position: relative;
+  margin: 0 auto;
 }
 
 .frame-bubbles {
@@ -543,5 +543,3 @@
     transform: translateY(0%);
   }
 }
-
-/*# sourceMappingURL=frame.css.map */
