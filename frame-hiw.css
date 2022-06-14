@@ -1,11 +1,17 @@
 .frame-hiw-wrapper {
-  --frame-hiw-font: 0.08;
+  --frame-hiw-font: 0.04;
   font-size: calc(var(--frame-hiw-font) * 1vw);
-  width: 700em;
-  height: 740em;
+  width: 560em;
+  height: 642em;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
+}
+
+.frame-hiw-parent-container {
+  position: relative;
+  transform: translateY(60em);
+  transition: all 400ms ease-out;
 }
 
 .frame-hiw-wrapper, .frame-hiw-wrapper * {
@@ -14,7 +20,7 @@
 }
 
 .frame-hiw-sources-container {
-  width: 80%;
+  width: 560em;
   margin: 0 auto;
   display: grid;
   grid-auto-flow: row;
@@ -80,7 +86,7 @@
   background-color: white;
   border-radius: 100%;
   display: flex;
-  box-shadow: 0em 12em 40em rgba(182, 151, 235, 0.25);
+  box-shadow: 0 5em 15em 0 rgba(0, 0, 0, 0.07);
   position: relative;
   transition: all 400ms ease-out;
 }
@@ -153,6 +159,7 @@
 }
 .arrow-container.secondary .desc {
   max-width: 0;
+  transform: translate(-50%, -50%);
   overflow: hidden;
 }
 
@@ -167,37 +174,80 @@
   justify-content: center;
   justify-self: center;
 }
+.frame-hiw-excel-container .frame-hiw-excel-list .frame-hiw-excel-item {
+  height: 40em;
+  width: 40em;
+  position: relative;
+}
+.frame-hiw-excel-container .frame-hiw-excel-list .frame-hiw-excel-item::before {
+  content: "";
+  position: absolute;
+  top: -10em;
+  left: -10em;
+  right: -10em;
+  bottom: -10em;
+}
+.frame-hiw-excel-container .frame-hiw-excel-list .frame-hiw-excel-item img {
+  width: 100%;
+}
 .frame-hiw-excel-container .frame-hiw-excel-list.row1 .frame-hiw-excel-item:nth-of-type(1) {
   transform: translateY(70%);
+}
+.frame-hiw-excel-container .frame-hiw-excel-list.row1 .frame-hiw-excel-item:nth-of-type(1)::before {
+  backdrop-filter: blur(1em);
 }
 .frame-hiw-excel-container .frame-hiw-excel-list.row1 .frame-hiw-excel-item:nth-of-type(2) {
   transform: translateY(15%);
 }
+.frame-hiw-excel-container .frame-hiw-excel-list.row1 .frame-hiw-excel-item:nth-of-type(2)::before {
+  backdrop-filter: blur(0.3em);
+}
 .frame-hiw-excel-container .frame-hiw-excel-list.row1 .frame-hiw-excel-item:nth-of-type(3) {
   transform: translateY(40%);
+}
+.frame-hiw-excel-container .frame-hiw-excel-list.row1 .frame-hiw-excel-item:nth-of-type(3)::before {
+  backdrop-filter: blur(em);
 }
 .frame-hiw-excel-container .frame-hiw-excel-list.row1 .frame-hiw-excel-item:nth-of-type(4) {
   transform: translateY(20%);
 }
+.frame-hiw-excel-container .frame-hiw-excel-list.row1 .frame-hiw-excel-item:nth-of-type(4)::before {
+  backdrop-filter: blur(0.3em);
+}
 .frame-hiw-excel-container .frame-hiw-excel-list.row1 .frame-hiw-excel-item:nth-of-type(5) {
   transform: translateY(60%);
+}
+.frame-hiw-excel-container .frame-hiw-excel-list.row1 .frame-hiw-excel-item:nth-of-type(5)::before {
+  backdrop-filter: blur(1.3em);
 }
 .frame-hiw-excel-container .frame-hiw-excel-list.row2 .frame-hiw-excel-item:nth-of-type(1) {
   transform: translateY(0%);
 }
+.frame-hiw-excel-container .frame-hiw-excel-list.row2 .frame-hiw-excel-item:nth-of-type(1)::before {
+  backdrop-filter: blur(0.7em);
+}
 .frame-hiw-excel-container .frame-hiw-excel-list.row2 .frame-hiw-excel-item:nth-of-type(2) {
   transform: translateY(-25%);
+}
+.frame-hiw-excel-container .frame-hiw-excel-list.row2 .frame-hiw-excel-item:nth-of-type(2)::before {
+  backdrop-filter: blur(0em);
 }
 .frame-hiw-excel-container .frame-hiw-excel-list.row2 .frame-hiw-excel-item:nth-of-type(3) {
   transform: translateY(0%);
 }
+.frame-hiw-excel-container .frame-hiw-excel-list.row2 .frame-hiw-excel-item:nth-of-type(3)::before {
+  backdrop-filter: blur(0em);
+}
 .frame-hiw-excel-container .frame-hiw-excel-list.row2 .frame-hiw-excel-item:nth-of-type(4) {
   transform: translateY(-20%);
 }
+.frame-hiw-excel-container .frame-hiw-excel-list.row2 .frame-hiw-excel-item:nth-of-type(4)::before {
+  backdrop-filter: blur(0.8em);
+}
 
 .frame-hiw-kaya-logo {
-  width: 54em;
-  height: 54em;
+  width: 44em;
+  height: 44em;
   margin: 0 auto;
   border-radius: 100%;
   border: 2em solid white;
@@ -225,19 +275,24 @@
 .frame-hiw-channels-table {
   width: max-content;
   margin: 0 auto;
-  border-radius: 30em;
+  border-radius: 10em;
   height: 250em;
   max-height: 0;
   opacity: 0;
   transition: all 200ms ease-out;
-  box-shadow: 0em 12em 40em rgba(182, 151, 235, 0.25);
+  box-shadow: 0 5em 15em 0 rgba(0, 0, 0, 0.07);
 }
 .frame-hiw-channels-table img {
   height: 100%;
+  border-radius: 30em;
 }
 
+.with-kaya .frame-hiw-parent-container {
+  transform: translateY(0em);
+}
 .with-kaya .frame-hiw-sources-container {
-  max-height: 130em;
+  max-height: 110em;
+  padding-bottom: 20em;
 }
 .with-kaya .frame-hiw-sources-list.row1 {
   transform: translate(30em, 15em);
@@ -253,13 +308,13 @@
   display: none;
 }
 .with-kaya .arrow-container .arrow::before {
-  height: 70em;
+  height: 60em;
 }
 .with-kaya .arrow-container.primary .desc::before {
   content: "Automatically collects data";
 }
 .with-kaya .arrow-container.secondary {
-  max-height: 70em;
+  max-height: 60em;
   opacity: 1;
   overflow: visible;
 }
@@ -267,7 +322,7 @@
   max-width: none;
 }
 .with-kaya .frame-hiw-kaya-logo {
-  max-height: 54em;
+  max-height: 44em;
   opacity: 1;
 }
 .with-kaya .frame-hiw-kaya-logo::after {
