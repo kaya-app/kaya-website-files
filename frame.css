@@ -7,24 +7,6 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 991px) {
-  .frame-wrapper {
-    font-size: 0.06vw;
-  }
-
-  .frame-slack-container {
-    left: 1100em;
-  }
-}
-@media screen and (max-width: 767px) {
-  .frame-wrapper {
-    font-size: 0.07vw;
-  }
-
-  .frame-slack-container {
-    left: 870em;
-  }
-}
 .frame-wrapper, .frame-wrapper * {
   pointer-events: none;
   user-select: none;
@@ -569,6 +551,24 @@
   100% {
     opacity: 1;
     transform: translateY(0%);
+  }
+}
+@media screen and (max-width: 991px) {
+  .frame-wrapper {
+    font-size: 0.06vw;
+  }
+
+  .frame-slack-container {
+    left: 1100em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .frame-wrapper {
+    font-size: 0.07vw;
+  }
+
+  .frame-slack-container {
+    left: 870em;
   }
 }
 
