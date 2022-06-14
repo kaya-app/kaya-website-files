@@ -1,5 +1,5 @@
 .frame-hiw-wrapper {
-  --frame-hiw-font: 0.60;
+  --frame-hiw-font: 0.88;
   font-size: calc(var(--frame-hiw-font) * 1px);
   width: auto;
   display: flex;
