@@ -1,0 +1,403 @@
+$bg-colour: #F9F9F9;
+.frame-hiw-wrapper {
+  --frame-hiw-font: 0.06;
+  font-size: calc(var(--frame-hiw-font) * 1vw);
+  //font-size: 1px;
+  width: 560em;
+  height: 552em;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: $bg-colour;
+}
+
+.frame-hiw-parent-container {
+  position: relative;
+  transform: translateY(25em);
+  transition: all 400ms ease-out;
+}
+
+.frame-hiw-wrapper, .frame-hiw-wrapper * {
+  //pointer-events: none;
+  //user-select: none;
+}
+
+$anim-duration: 400ms;
+$frame-hiw-sources-padding-top: 20;
+$frame-hiw-sources-padding-bottom: 50;
+$frame-hiw-sources-padding-bottom-with-kaya: 20;
+$frame-hiw-sources-row-gap: 30;
+$frame-hiw-sources-list-adjust: $frame-hiw-sources-row-gap * 0.5;
+$frame-hiw-sources-item-dim: 40;
+$frame-hiw-sources-list-move-row1: 30;
+$frame-hiw-sources-list-move-row2: -#{$frame-hiw-sources-list-move-row1};
+
+@function frame-hiw-sources-container-height () {
+  @return $frame-hiw-sources-padding-top + $frame-hiw-sources-padding-bottom + $frame-hiw-sources-row-gap + ($frame-hiw-sources-item-dim * 2)
+}
+
+@function frame-hiw-sources-container-height-with-kaya () {
+  @return $frame-hiw-sources-padding-top + $frame-hiw-sources-padding-bottom-with-kaya + ($frame-hiw-sources-item-dim) + $frame-hiw-sources-list-move-row1
+}
+
+@function frame-hiw-sources-list-row2-position-top () {
+  @return $frame-hiw-sources-padding-top + $frame-hiw-sources-row-gap + $frame-hiw-sources-item-dim
+}
+
+.frame-hiw-sources-container {
+  //position: absolute;
+  //left: 50%;
+  //top: 30em;
+  //transform: translateX(-50%);
+  width: 560em;
+  margin: 0 auto;
+  display: grid;
+  grid-auto-flow: row;
+  grid-row-gap: #{$frame-hiw-sources-row-gap}em;
+  background-position: -1em -1em;
+  background-size: 30em 30em;
+  background-image: linear-gradient(to right, #e1e0e4 1em, transparent 1em), linear-gradient(to bottom, #e1e0e4 1em, transparent 1em);
+  background-repeat: repeat;
+  box-shadow: inset 0 0 40em 40em hsla(0, 0%, 98%, 0.9);
+  padding: #{$frame-hiw-sources-padding-top}em 30em #{$frame-hiw-sources-padding-bottom}em 30em;
+  max-height: #{frame-hiw-sources-container-height()}em;
+  height: #{frame-hiw-sources-container-height()}em;
+  transition: max-height $anim-duration ease-out;
+  position: relative;
+
+  .frame-hiw-sources-list, {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 80em;
+    justify-content: start;
+    justify-self: center;
+
+    $move-logos: (
+            1 -5%, 2 15%, 3 -15%, 4 40%
+    );
+
+    &.row1 {
+      transform: translate(#{$frame-hiw-sources-list-move-row1}em, 0);
+      transition: all $anim-duration ease-out;
+
+      @each $nth, $move-y in $move-logos {
+        .frame-hiw-sources-item:nth-of-type(#{$nth}) {
+          transform: translateY($move-y);
+        }
+      }
+
+      .frame-hiw-sources-item:nth-of-type(4) {
+        transform: translateY(110%);
+      }
+    }
+
+    &.row2 {
+      transform: translateX(#{$frame-hiw-sources-list-move-row2}em);
+      position: absolute;
+      top: #{frame-hiw-sources-list-row2-position-top()}em;
+      transition: all $anim-duration ease-out;
+
+      @each $nth, $move-y in $move-logos {
+        .frame-hiw-sources-item:nth-of-type(#{$nth}) {
+          transform: translateY($move-y);
+        }
+      }
+    }
+  }
+
+  .frame-hiw-sources-item {
+    height: #{$frame-hiw-sources-item-dim}em;
+    width: #{$frame-hiw-sources-item-dim}em;
+    background-color: white;
+    border-radius: 100%;
+    display: flex;
+    //box-shadow: 0em 12em 40em rgba(182, 151, 235, 0.25);
+    box-shadow: 0 5em 15em 0 rgb(0 0 0 / 7%);
+    position: relative;
+    transition: all $anim-duration ease-out;
+
+    img {
+      height: 22em;
+      width: 22em;
+      margin: auto;
+
+      &.sm {
+        height: 18em;
+        width: 18em;
+      }
+
+      &.lg {
+        height: 26em;
+        width: 26em;
+      }
+
+      &.xl {
+        height: 32em;
+        width: 32em;
+      }
+    }
+  }
+}
+
+$arrow-width: 2em;
+$arrow-height: 90em;
+$arrow-height-with-kaya: 60em;
+$arrow-colour: #09080b;
+$arrow-head-height: 8em;
+$arrow-head-width: 6em;
+
+.arrow-container {
+  width: max-content;
+  margin: 30em auto;
+  position: relative;
+
+  .arrow {
+    width: $arrow-width;
+
+    &::before {
+      content: '';
+      width: $arrow-width;
+      background: $arrow-colour;
+      height: $arrow-height;
+      display: block;
+      //float: bottom;
+    }
+
+    &::after {
+      content: '';
+      border-top: $arrow-head-height solid $arrow-colour;
+      border-right: $arrow-head-width solid transparent;
+      border-left: $arrow-head-width solid transparent;
+      float: bottom;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+    }
+  }
+
+  .desc {
+    font-size: calc(var(--frame-hiw-font) * 12vw);
+    position: absolute;
+    width: 19em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    z-index: 1;
+    background-color: $bg-colour;
+    padding: 0.5em 0;
+    text-align: center;
+  }
+
+  &.primary {
+    margin-top: 0;
+
+    .desc::before {
+      content: 'Manually gather data across platforms and updating spreadsheets'
+    }
+  }
+
+  &.secondary {
+    max-height: 0em;
+    overflow: hidden;
+    transition: all $anim-duration ease-out;
+    margin-bottom: 15em;
+
+    .desc {
+      max-width: 0;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+  }
+}
+
+.frame-hiw-excel-container {
+  display: grid;
+  grid-row-gap: 50em;
+
+  .frame-hiw-excel-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 50em;
+    justify-content: center;
+    justify-self: center;
+
+    .frame-hiw-excel-item {
+      height: 40em;
+      width: 40em;
+      position: relative;
+
+      &::before {
+        $ei-u: -10em;
+        content: '';
+        position: absolute;
+        top: $ei-u;
+        left: $ei-u;
+        right: $ei-u;
+        bottom: $ei-u;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &.row1 {
+      $move-excel-logos-1: (
+              1 70% 1, 2 15% 0.3, 3 40%, 4 20% 0.3, 5 60% 1.3
+      );
+
+      @each $nth, $move-y, $blur in $move-excel-logos-1 {
+        .frame-hiw-excel-item:nth-of-type(#{$nth}) {
+          transform: translateY($move-y);
+
+          &::before {
+            backdrop-filter: blur(#{$blur}em);
+          }
+        }
+      }
+    }
+
+    &.row2 {
+      $move-excel-logos-2: (
+              1 0% 0.7, 2 -25% 0, 3 0% 0 0, 4 -20% 0.8
+      );
+
+      @each $nth, $move-y, $blur in $move-excel-logos-2 {
+        .frame-hiw-excel-item:nth-of-type(#{$nth}) {
+          transform: translateY($move-y);
+
+          &::before {
+            backdrop-filter: blur(#{$blur}em);
+          }
+        }
+      }
+    }
+  }
+}
+
+$kaya-logo-dim: 44em;
+.frame-hiw-kaya-logo {
+  width: $kaya-logo-dim;
+  height: $kaya-logo-dim;
+  margin: 0 auto;
+  //display: none;
+  border-radius: 100%;
+  border: 2em solid white;
+  box-shadow: 0em 14em 40em rgba(182, 151, 235, 0.25);
+  max-height: 0em;
+  opacity: 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    border-radius: 100%;
+    animation: pulse-purple 3s infinite;
+  }
+
+  img {
+    border-radius: 100%;
+    width: 100%;
+  }
+}
+
+$table-height: 180em;
+.frame-hiw-channels-table {
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 10em;
+  height: $table-height;
+  max-height: 0;
+  opacity: 0;
+  transition: all 200ms ease-out;
+  //box-shadow: 0 5em 15em 0 rgb(0 0 0 / 7%);
+
+  img {
+    height: 100%;
+    border-radius: 30em;
+  }
+}
+
+.with-kaya {
+  .frame-hiw-parent-container {
+    transform: translateY(0em);
+  }
+
+  .frame-hiw-sources-container {
+    max-height: #{frame-hiw-sources-container-height-with-kaya()}em;
+    padding-bottom: #{$frame-hiw-sources-padding-bottom-with-kaya}em;
+  }
+
+  .frame-hiw-sources-list {
+    &.row1 {
+      transform: translate(#{$frame-hiw-sources-list-move-row1}em, #{$frame-hiw-sources-list-adjust}em);
+    }
+
+    &.row2 {
+      position: absolute;
+      top: #{$frame-hiw-sources-padding-top + $frame-hiw-sources-list-adjust}em;
+    }
+  }
+
+  .frame-hiw-sources-item {
+    transform: translateY(0%) !important;
+  }
+
+  .frame-hiw-excel-container {
+    display: none;
+  }
+
+  .arrow-container {
+    .arrow::before {
+      height: $arrow-height-with-kaya;
+    }
+
+    &.primary .desc::before {
+      content: 'Automatically collects data'
+    }
+
+    &.secondary {
+      max-height: $arrow-height-with-kaya;
+      opacity: 1;
+      overflow: visible;
+
+      .desc {
+        max-width: none;
+      }
+    }
+  }
+
+  .frame-hiw-kaya-logo {
+    max-height: $kaya-logo-dim;
+    opacity: 1;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  .frame-hiw-channels-table {
+    max-height: $table-height;
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-purple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(94, 0, 255, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 20em rgba(94, 0, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(94, 0, 255, 0);
+  }
+}
