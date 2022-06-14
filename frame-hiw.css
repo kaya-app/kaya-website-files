@@ -1,18 +1,25 @@
 .frame-hiw-wrapper {
-  --frame-hiw-font: 0.06;
-  font-size: calc(var(--frame-hiw-font) * 1vw);
-  width: 560em;
-  height: 552em;
+  --frame-hiw-font: 0.60;
+  font-size: calc(var(--frame-hiw-font) * 1px);
+  width: auto;
+  display: flex;
+  height: 540em;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
   background-color: #F9F9F9;
+}
+@media screen and (max-width: 479px) {
+  .frame-hiw-wrapper {
+    --frame-hiw-font: 0.60;
+  }
 }
 
 .frame-hiw-parent-container {
   position: relative;
   transform: translateY(25em);
   transition: all 400ms ease-out;
+  height: max-content;
 }
 
 .frame-hiw-sources-container {
@@ -131,7 +138,7 @@
   display: block;
 }
 .arrow-container .desc {
-  font-size: calc(var(--frame-hiw-font) * 12vw);
+  font-size: 10em;
   position: absolute;
   width: 19em;
   top: 50%;
