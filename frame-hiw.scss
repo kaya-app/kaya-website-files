@@ -24,8 +24,8 @@ $bg-colour: #F9F9F9;
 }
 
 .frame-hiw-wrapper, .frame-hiw-wrapper * {
-  //pointer-events: none;
-  //user-select: none;
+  pointer-events: none;
+  user-select: none;
 }
 
 $anim-duration: 400ms;
@@ -51,10 +51,6 @@ $frame-hiw-sources-list-move-row2: -#{$frame-hiw-sources-list-move-row1};
 }
 
 .frame-hiw-sources-container {
-  //position: absolute;
-  //left: 50%;
-  //top: 30em;
-  //transform: translateX(-50%);
   width: 560em;
   margin: 0 auto;
   display: grid;
@@ -117,7 +113,6 @@ $frame-hiw-sources-list-move-row2: -#{$frame-hiw-sources-list-move-row1};
     background-color: white;
     border-radius: 100%;
     display: flex;
-    //box-shadow: 0em 12em 40em rgba(182, 151, 235, 0.25);
     box-shadow: 0 5em 15em 0 rgb(0 0 0 / 7%);
     position: relative;
     transition: all $anim-duration ease-out;
@@ -166,7 +161,6 @@ $arrow-head-width: 6em;
       background: $arrow-colour;
       height: $arrow-height;
       display: block;
-      //float: bottom;
     }
 
     &::after {
@@ -287,7 +281,6 @@ $kaya-logo-dim: 44em;
   width: $kaya-logo-dim;
   height: $kaya-logo-dim;
   margin: 0 auto;
-  //display: none;
   border-radius: 100%;
   border: 2em solid white;
   box-shadow: 0em 14em 40em rgba(182, 151, 235, 0.25);
@@ -322,11 +315,11 @@ $table-height: 180em;
   max-height: 0;
   opacity: 0;
   transition: all 200ms ease-out;
-  //box-shadow: 0 5em 15em 0 rgb(0 0 0 / 7%);
 
   img {
     height: 100%;
     border-radius: 30em;
+    -webkit-transform: translate3d(0,0,0) // fixes safari blur
   }
 }
 
