@@ -101,7 +101,8 @@ const props = defineProps({})
         </div>
         <div class="frame-hiw-channels-table">
           <img
-            src="https://uploads-ssl.webflow.com/61dd865bd089adaaa43f7154/62a93dc59a8a981f4c5e9554_pd-tables-chart.png"/>
+            loading="eager"
+            src="https://uploads-ssl.webflow.com/61dd865bd089adaaa43f7154/62a940795bdf9d0835f48fd7_pd-tables-chart-2x.png"/>
         </div>
       </div>
     </div>
