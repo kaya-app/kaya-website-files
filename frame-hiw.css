@@ -293,7 +293,6 @@
 .frame-hiw-channels-table img {
   height: 100%;
   border-radius: 30em;
-  -webkit-transform: translate3d(0, 0, 0);
 }
 
 .with-kaya .frame-hiw-parent-container {
