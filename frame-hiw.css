@@ -22,6 +22,11 @@
   height: max-content;
 }
 
+.frame-hiw-wrapper, .frame-hiw-wrapper * {
+  pointer-events: none;
+  user-select: none;
+}
+
 .frame-hiw-sources-container {
   width: 560em;
   margin: 0 auto;
@@ -288,6 +293,7 @@
 .frame-hiw-channels-table img {
   height: 100%;
   border-radius: 30em;
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 .with-kaya .frame-hiw-parent-container {
