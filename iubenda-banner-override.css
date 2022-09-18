@@ -28,7 +28,7 @@
   flex-grow: 0 !important;
   font-weight: 400 !important;
   font-family: 'Apercu' !important;
-  font-feature-settings: "ss01" on !important;
+  font-feature-settings: "ss01"on !important;
   -webkit-font-smoothing: antialiased !important;
 }
 
@@ -39,7 +39,7 @@
   border-radius: 6px !important;
   margin: 0 !important;
   font-family: 'Apercu' !important;
-  font-feature-settings: "ss01" on !important;
+  font-feature-settings: "ss01"on !important;
   -webkit-font-smoothing: antialiased !important;
 }
 
@@ -48,7 +48,7 @@
   text-decoration: underline !important;
   font-weight: 500 !important;
   font-family: 'Apercu' !important;
-  font-feature-settings: "ss01" on !important;
+  font-feature-settings: "ss01"on !important;
   -webkit-font-smoothing: antialiased !important;
 }
 
@@ -60,12 +60,18 @@
   flex-direction: row !important;
   justify-content: center !important;
   flex-wrap: wrap !important;
+  padding: 4px 6px !important;
 }
 
 #iubenda-cs-banner.iubenda-cs-default-floating div.iubenda-cs-container {
   width: auto !important;
 }
 
-#iubenda-cs-banner .iubenda-cs-opt-group button.focus, #iubenda-cs-banner .iubenda-cs-opt-group button.hover.iubenda-cs-customize-btn {
+#iubenda-cs-banner.iubenda-cs-padded:not(.iubenda-cs-branded) div.iubenda-banner-content {
+  padding-right: 0 !important;
+}
+
+#iubenda-cs-banner .iubenda-cs-opt-group button.focus,
+#iubenda-cs-banner .iubenda-cs-opt-group button.hover.iubenda-cs-customize-btn {
   box-shadow: unset !important;
 }
