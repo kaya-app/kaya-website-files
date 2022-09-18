@@ -1,0 +1,71 @@
+#iubenda-cs-banner div.iubenda-cs-opt-group {
+  display: inline-grid !important;
+  grid-auto-flow: column;
+  grid-column-gap: 12px !important;
+  align-items: center !important;
+  margin: 0 !important;
+  margin-left: 2px !important;
+}
+
+.iubenda-banner-content {
+  padding: 0 !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+
+#iubenda-cs-banner.iubenda-cs-scrollable div.iubenda-banner-content {
+  mask-image: unset !important;
+  -webkit-mask-image: unset !important;
+}
+
+#iubenda-cs-banner .iubenda-banner-content.iubenda-custom-content.iubenda-banner-content-padded {
+  padding: 0 !important;
+  margin: 0 !important;
+  align-items: center !important;
+  text-align: center !important;
+  display: flex !important;
+  width: auto !important;
+  flex-grow: 0 !important;
+  font-weight: 400 !important;
+  font-family: 'Apercu' !important;
+  font-feature-settings: "ss01" on !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+#iubenda-cs-banner .iubenda-cs-opt-group button.iubenda-cs-accept-btn,
+#iubenda-cs-banner .iubenda-cs-opt-group button.iubenda-cs-btn-primary,
+.iubenda-alert button.iubenda-button-confirm {
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  margin: 0 !important;
+  font-family: 'Apercu' !important;
+  font-feature-settings: "ss01" on !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+#iubenda-cs-banner .iubenda-cs-opt-group button.iubenda-cs-customize-btn {
+  padding: 0 !important;
+  text-decoration: underline !important;
+  font-weight: 500 !important;
+  font-family: 'Apercu' !important;
+  font-feature-settings: "ss01" on !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+#iubenda-cs-banner div.iubenda-cs-opt-group-custom {
+  order: 0 !important;
+}
+
+#iubenda-cs-banner div.iubenda-cs-rationale {
+  flex-direction: row !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+
+#iubenda-cs-banner.iubenda-cs-default-floating div.iubenda-cs-container {
+  width: auto !important;
+}
+
+#iubenda-cs-banner .iubenda-cs-opt-group button.focus, #iubenda-cs-banner .iubenda-cs-opt-group button.hover.iubenda-cs-customize-btn {
+  box-shadow: unset !important;
+}
