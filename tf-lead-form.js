@@ -1,4 +1,9 @@
-$('.hidden-current-page').val(location.href);
+// saved in WF form
+const hiddenInput = document.querySelectorAll('.hidden-current-page')
+hiddenInput.forEach(i => {
+  i.value = location.href;
+})
+
 const TFLaunchers = document.querySelectorAll('.tf-form')
 TFLaunchers.forEach(i => {
   i.addEventListener('submit', function() {
