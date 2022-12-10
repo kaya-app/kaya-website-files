@@ -9,6 +9,7 @@ TFLaunchers.forEach(i => {
   i.addEventListener('submit', function() {
     const _input = i.querySelector('.input-email')
     // const _input = i.previousElementSibling
+    const _hrefSource = location.href
     const _queryString = window.location.search
     const formId = i.getAttribute('tf-form-id')
     const historyReplaceTo = i.getAttribute('tf-history-replace')
@@ -16,6 +17,7 @@ TFLaunchers.forEach(i => {
       hidden: {
         email: _input.value,
         url_params: _queryString,
+        href_source: _hrefSource
       }
     }).open()
     window.history.replaceState(null, null, historyReplaceTo)
