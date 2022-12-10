@@ -1,7 +1,7 @@
-.ct-accordion-label-0.w-dropdown-toggle.w--open .accordion-caret {
-	transform: rotate(90deg);
+.ct-accordion-label-0.w-dropdown-toggle.w--open .dropdown-icon {
+	transform: rotate(180deg);
 }
 
 .ct-list-item-product-faq:not(:first-child) {
-  border-top: 1px solid #eeedf1;
+	border-top: 1px solid #eeedf1;
 }
