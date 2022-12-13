@@ -14,8 +14,8 @@ TFLaunchersWithinForm.forEach(i => {
   i.addEventListener('submit', function() {
     const _input = i.querySelector('.input-email')
     const _formId = i.getAttribute('tf-form-id')
-    const _formURL = 'https://form.typeform.com/to/ZnwDcctb#answers-interest=01GKYVZ05JA9H1E95MDBVCH5X9'
-    window.tf.createPopup(_formURL, {
+    // const _formURL = 'https://form.typeform.com/to/ZnwDcctb#answers-interest=01GKYVZ05JA9H1E95MDBVCH5X9'
+    window.tf.createPopup(_formId, {
       hidden: {
         email: _input.value,
         url_params: queryString,
