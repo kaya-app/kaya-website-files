@@ -28,7 +28,7 @@ TFLaunchersWithinForm.forEach(i => {
 const TFLaunchers = document.querySelectorAll('[data-tf-prop]')
 TFLaunchers.forEach(i => {
   i.setAttribute('data-tf-hidden', `source=${hrefSource}`)
-  i.addEventListener('click', function () {
+  i.addEventListener('click', function() {
     window.history.replaceState(null, null, historyReplaceTo)
-  }
+  })
 })
