@@ -31,7 +31,7 @@ const appStart = 'https://app.usekaya.com/start'
 TFLaunchersWithinForm.forEach(i => {
   i.addEventListener('submit', function() {
     const _input = i.querySelector('.input-email')
-    window.history.pushState(null, null, `${appStart}?ref-email=${_input.value}`)
+    window.location.href = `${appStart}?ref-email=${_input.value}`
   })
 })
 
