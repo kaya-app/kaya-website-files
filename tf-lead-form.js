@@ -27,7 +27,7 @@ hiddenInput.forEach(i => {
 // })
 
 const TFLaunchersWithinForm = document.querySelectorAll('.tf-form')
-const appStart = 'https://app.usekaya.com/start'
+const appStart = 'https://app.usekaya.com/start-proposal'
 TFLaunchersWithinForm.forEach(i => {
   i.addEventListener('submit', function() {
     const _input = i.querySelector('.input-email')
