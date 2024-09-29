@@ -4,7 +4,7 @@ function navbarIntersectionObserver(elId, isLight) {
 
   if (!targetElement || !navbarElement) return
 
-  const _threshold = 0.1
+  const _threshold = 0.05
   const options = {
     root: null, // use the viewport as the root
     rootMargin: "0px",
