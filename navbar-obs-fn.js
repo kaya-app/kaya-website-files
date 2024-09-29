@@ -1,4 +1,4 @@
-function navbarIntersectionObserver(elId) {
+function navbarIntersectionObserver(elId, isLight) {
   const targetElement = document.getElementById(elId)
   const navbarElement = document.getElementById("navbar")
 
@@ -10,10 +10,12 @@ function navbarIntersectionObserver(elId) {
     threshold: 0, // trigger when 10% of the target is visible
   }
 
+  let classesToToggle = ["intersect-in-view"]
+  if (isLight) classesToToggle = ["intersect-in-view", "intersect-light"]
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) navbarElement.classList.add("intersect-in-view")
-      else navbarElement.classList.remove("intersect-in-view")
+      if (entry.isIntersecting) navbarElement.classList.add(...classesToToggle)
+      else navbarElement.classList.remove(...classesToToggle)
     })
   }, options)
   observer.observe(targetElement)
