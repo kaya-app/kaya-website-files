@@ -7,7 +7,7 @@ function navbarIntersectionObserver(elId, isLight) {
   const options = {
     root: null, // use the viewport as the root
     rootMargin: "0px",
-    threshold: 0.04, // trigger when 10% of the target is visible
+    threshold: [0, 0.04]
   }
 
   let classesToToggle = ["intersect-in-view"]
