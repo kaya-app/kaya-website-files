@@ -5,7 +5,7 @@ function addUtmToAppLinks(className = '.blog-body-content', utmMedium = '') {
    if (!links?.length) return
   
    links?.forEach(link => {
-     const href = link>.getAttribute('href')
+     const href = link?.getAttribute('href')
      if (href?.includes('?')) return
      
      const path = window.location.pathname
