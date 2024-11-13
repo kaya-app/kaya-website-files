@@ -10,7 +10,7 @@ function addUtmToAppLinks(utmMedium = '') {
      const lastPath = path.split('/').filter(Boolean).pop()
      
      const utmParams = new URLSearchParams({
-       utm_medium: utmMedium
+       utm_medium: utmMedium,
        utm_source: 'kaya-website',
        utm_campaign: lastPath
      })
