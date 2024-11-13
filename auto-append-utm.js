@@ -7,7 +7,7 @@ function addUtmToAppLinks(className = '.blog-body-content', utmMedium = '') {
    links?.forEach(link => {
      const href = link?.getAttribute('href')
      if (href?.includes('?')) return
-     
+    
      const path = window.location.pathname
      const lastPath = path?.split('/')?.filter(Boolean)?.pop()
      
@@ -16,7 +16,10 @@ function addUtmToAppLinks(className = '.blog-body-content', utmMedium = '') {
        utm_source: 'kaya-website',
        utm_campaign: lastPath
      })
-     
+    console.log(path)
+     console.log(lastPath)
+    console.log(utmMedium)
+    console.log(`${href}?${utmParams.toString()}`)
      link.setAttribute('href', `${href}?${utmParams.toString()}`)
    })
  })
