@@ -1,4 +1,4 @@
-function addUtmToAppLinks(className = '.blog-body-content', utmMedium = '') {
+function addUtmToAppLinks(utmMedium = '', className = '.blog-body-content') {
  document.querySelectorAll(className)?.forEach(blogContent => {
    const links = blogContent?.querySelectorAll('a[href*="app.usekaya.com"]')
 
