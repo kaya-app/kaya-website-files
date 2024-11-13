@@ -16,10 +16,6 @@ function addUtmToAppLinks(utmMedium = '', className = '.blog-body-content') {
        utm_source: 'kaya-website',
        utm_campaign: lastPath
      })
-    console.log(path)
-     console.log(lastPath)
-    console.log(utmMedium)
-    console.log(`${href}?${utmParams.toString()}`)
      link.setAttribute('href', `${href}?${utmParams.toString()}`)
    })
  })
