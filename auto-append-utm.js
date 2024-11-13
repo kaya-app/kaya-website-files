@@ -1,13 +1,15 @@
-function addUtmToAppLinks(utmMedium = '') {
- document.querySelectorAll('.blog-body-content').forEach(blogContent => {
-   const links = blogContent.querySelectorAll('a[href*="app.usekaya.com"]')
-   
-   links.forEach(link => {
-     const href = link.getAttribute('href')
-     if (href.includes('?')) return
+function addUtmToAppLinks(className = '.blog-body-content', utmMedium = '') {
+ document.querySelectorAll(className)?.forEach(blogContent => {
+   const links = blogContent?.querySelectorAll('a[href*="app.usekaya.com"]')
+
+   if (!links?.length) return
+  
+   links?.forEach(link => {
+     const href = link>.getAttribute('href')
+     if (href?.includes('?')) return
      
      const path = window.location.pathname
-     const lastPath = path.split('/').filter(Boolean).pop()
+     const lastPath = path?.split('/')?.filter(Boolean)?.pop()
      
      const utmParams = new URLSearchParams({
        utm_medium: utmMedium,
